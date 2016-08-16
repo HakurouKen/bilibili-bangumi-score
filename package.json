@@ -1,0 +1,25 @@
+{
+  "name": "bilibili-bangumi-score",
+  "version": "0.0.1",
+  "description": "Get bangumi rate in bilibili anime.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bilibili",
+    "bangumi"
+  ],
+  "author": "HakurouKen",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.13.2",
+    "css-loader": "^0.23.1",
+    "node-sass": "^3.8.0",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1"
+  }
+}

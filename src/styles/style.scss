@@ -1,0 +1,12 @@
+#bangumi-score {
+    span {
+        display: inline;
+    }
+
+    &.info-count-item {
+        width: 150px;
+        text-indent: 20px;
+        border-left: 1px solid #FFFFFF;
+        border-right-color: transparent;
+    }
+}
