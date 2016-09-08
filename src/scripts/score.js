@@ -2,7 +2,7 @@ const PERSON = /\(\s?(\d+)人/;
 const DOMAIN = 'http://bangumi.tv'
 
 function get(title){
-    let url = `http://bangumi.tv/subject_search/${encodeURIComponent(title)}?cat=2`;
+    let url = `${DOMAIN}/subject_search/${encodeURIComponent(title)}?cat=2`;
     return fetch(url).then(response => {
         return response.text();
     }).then(html => {
@@ -10,10 +10,10 @@ function get(title){
         $doc.innerHTML = html;
 
         let $item = $doc.querySelector('#browserItemList .item');
+        if (!$item) return Promise.reject(url);
+
         let $info = $item.querySelector('.rateInfo');
         let $score = $info.querySelector('.fade');
-
-        if (!$score) return null;
 
         return {
             score: +$score.innerText || 0,

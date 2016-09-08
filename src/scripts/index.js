@@ -1,12 +1,14 @@
-import {get as get} from "./score"
-import {render} from "./template"
+import { get as get } from "./score"
+import { render } from "./template"
 
 let title = document.querySelector('.info-title').getAttribute('title');
-
+let $count = document.querySelector('.info-count');
 get(title).then(info => {
-    if ( info && info.score ) {
-        document.querySelector('.info-count').insertAdjacentHTML('beforeend',render(info));
+    if ($count) {
+        $count.insertAdjacentHTML('beforeend',render(info));
     }
 }).catch(err=>{
-    // ignore errors.
+    if ($count && typeof err === 'string') {
+        $count.insertAdjacentHTML('beforeend',render(err));
+    }
 });
