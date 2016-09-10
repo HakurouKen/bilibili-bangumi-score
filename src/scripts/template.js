@@ -14,7 +14,7 @@ function containerTemplate(url,content){
 }
 
 function template(data={}){
-    return containerTemplate(data.url,
+    return containerTemplate(data.href,
         `
             <span class="bangumi-score">${data.score}</span>
             <span class="bangumi-person">( 共 ${data.person || '-'} 人评价 )</span>
